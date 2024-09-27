@@ -514,6 +514,7 @@ if __name__ == "__main__":
     )
     podcasts = {}
     for episode in episodes:
+        
         episode_properties = episode.get("properties")
         podcast = utils.get_property_value(episode_properties.get("Podcast"))
         podcast_properties = get_podcast(podcast)
@@ -538,6 +539,7 @@ if __name__ == "__main__":
             for episode in value.get("episodes"):
                 episode_properties = episode.get("properties")
                 title = utils.get_property_value(episode_properties.get("标题"))
+                print(f"title = {title} {episode.get('id')}")
                 children = []
                 # 20 正在转 30是成功 40是失败
                 record = get_record(title, records)
